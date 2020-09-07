@@ -1,0 +1,12 @@
+C:\Users\hgrioui\source\repos\TestJenkins\projet2\bin\Debug\netcoreapp3.1\projet2.exe
+C:\Users\hgrioui\source\repos\TestJenkins\projet2\bin\Debug\netcoreapp3.1\projet2.deps.json
+C:\Users\hgrioui\source\repos\TestJenkins\projet2\bin\Debug\netcoreapp3.1\projet2.runtimeconfig.json
+C:\Users\hgrioui\source\repos\TestJenkins\projet2\bin\Debug\netcoreapp3.1\projet2.runtimeconfig.dev.json
+C:\Users\hgrioui\source\repos\TestJenkins\projet2\bin\Debug\netcoreapp3.1\projet2.dll
+C:\Users\hgrioui\source\repos\TestJenkins\projet2\bin\Debug\netcoreapp3.1\projet2.pdb
+C:\Users\hgrioui\source\repos\TestJenkins\projet2\obj\Debug\netcoreapp3.1\projet2.AssemblyInfoInputs.cache
+C:\Users\hgrioui\source\repos\TestJenkins\projet2\obj\Debug\netcoreapp3.1\projet2.AssemblyInfo.cs
+C:\Users\hgrioui\source\repos\TestJenkins\projet2\obj\Debug\netcoreapp3.1\projet2.csproj.CoreCompileInputs.cache
+C:\Users\hgrioui\source\repos\TestJenkins\projet2\obj\Debug\netcoreapp3.1\projet2.dll
+C:\Users\hgrioui\source\repos\TestJenkins\projet2\obj\Debug\netcoreapp3.1\projet2.pdb
+C:\Users\hgrioui\source\repos\TestJenkins\projet2\obj\Debug\netcoreapp3.1\projet2.genruntimeconfig.cache
