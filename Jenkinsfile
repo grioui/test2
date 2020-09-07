@@ -10,7 +10,7 @@ pipeline {
         string(name: 'DEPLOY_ENV', defaultValue: 'Release', description: 'environnement de déploiement')
     }
      environment {
-        MSBUILD = "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\MSBuild\\Current\\Bin"
+        MSBUILD = "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\MSBuild\\Current\\Bin\\MSBuild.exe"
         CONFIG = 'Release'
         PLATFORM = 'x64'
       }
@@ -23,7 +23,7 @@ pipeline {
         stage('Build & SonarQube analysis') {
             steps {
                 echo "Building ..."
-                bat "\"${MSBUILD}\"  ${project}.sln /p:OutputPath=${outputPath} /p:Configuration=${env.CONFIG};Platform=\"Any CPU\""
+                bat "${MSBUILD}  ${project}.csproj /p:OutputPath=${outputPath} /p:Configuration=${env.CONFIG};Platform=\"Any CPU\""
             }
         }
     }
