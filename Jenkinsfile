@@ -1,20 +1,3 @@
-//To modify
-def project = "Bill_Generate"
-def specialCharacter = 'd$'
-def pathDevServer = "\\\\devcau01.srr.fr\\${specialCharacter}\\Websites\\${project}"
-def pathRecetteServer = "\\\\reclpo03.srr.fr\\${specialCharacter}\\Websites\\${project}"
-def productionServer = "weblpo02.srr.fr"
-def prodFile = "\\\\${productionServer}\\${specialCharacter}\\Websites\\${project}"
-
-//Should not be modified
-import java.text.SimpleDateFormat
-def date = new Date()
-def sdf = new SimpleDateFormat("yyyyMMdd")
-def filename = "${project}-${sdf.format(date)}"
-def archiveFile = "\\\\${productionServer}\\Archive\\${filename}"
-def version = ""
-def buildPath = "Super/bin/Release/_PublishedWebsites/${project}/"
-
 pipeline {
     agent any
     parameters {
@@ -32,9 +15,7 @@ pipeline {
         }
         stage('Build & SonarQube analysis') {
             steps {
-                echo "Building ${project}.."
-                bat "nuget restore ${project}.sln"
-                bat "\"${tool 'MsBuild 4.0 x64'}\" ${project}.sln /p:Configuration=${params.DEPLOY_ENV} /p:OutputPath=${env.WORKSPACE}/Super/bin/${params.DEPLOY_ENV} /p:Platform=\"Any CPU\""
+                echo "Building ..."
             }
         }
     }
