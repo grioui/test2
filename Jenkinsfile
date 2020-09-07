@@ -1,7 +1,7 @@
 def project = "projet1"
 def outputPath = "C:\\Users\\hgrioui\\source\\repos\\res\\p1"
 def msbuild = tool name: 'MSBuild', type: 'hudson.plugins.msbuild.MsBuildInstallation'
-          bat "${msbuild} SimpleWindowsProject.sln"
+
 pipeline {
     agent any
     parameters {
