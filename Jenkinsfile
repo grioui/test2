@@ -1,4 +1,4 @@
-def project = "projet1\\projet1"
+def project = "\\projet1\\projet1"
 def outputPath = "C:\\Users\\hgrioui\\source\\repos\\res\\p1"
 
 pipeline {
