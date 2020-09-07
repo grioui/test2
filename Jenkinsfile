@@ -1,3 +1,6 @@
+def project = "projet1"
+def outputPath = "C:\Users\hgrioui\source\repos\res\p1"
+
 pipeline {
     agent any
     parameters {
@@ -16,6 +19,7 @@ pipeline {
         stage('Build & SonarQube analysis') {
             steps {
                 echo "Building ..."
+                bat "\"${tool 'MsBuild 4.0 x64'}\" ${project}.sln /p:OutputPath=${outputPath} /p:Platform=\"Any CPU\""
             }
         }
     }
