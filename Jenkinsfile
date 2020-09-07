@@ -1,6 +1,5 @@
 def project = "projet1"
 def outputPath = "C:\\Users\\hgrioui\\source\\repos\\res\\p1"
-def msbuild = tool name: 'MSBuild', type: 'hudson.plugins.msbuild.MsBuildInstallation'
 
 pipeline {
     agent any
@@ -10,7 +9,11 @@ pipeline {
         string(name: 'buildNumber', defaultValue: '-1', description: 'Numéro de version à utiliser pour la version de production')
         string(name: 'DEPLOY_ENV', defaultValue: 'Release', description: 'environnement de déploiement')
     }
-
+     environment {
+        MSBUILD = "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\MSBuild\\Current\\Bin"
+        CONFIG = 'Release'
+        PLATFORM = 'x64'
+      }
     stages {
         stage('Checkout') {
             steps {
@@ -20,7 +23,7 @@ pipeline {
         stage('Build & SonarQube analysis') {
             steps {
                 echo "Building ..."
-                bat "${msbuild} ${project}.sln /p:OutputPath=${outputPath} /p:Platform=\"Any CPU\""
+                bat "\"${MSBUILD}\"  ${project}.sln /p:OutputPath=${outputPath} /p:Configuration=${env.CONFIG};Platform=\"Any CPU\""
             }
         }
     }
