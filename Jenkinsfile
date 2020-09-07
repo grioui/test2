@@ -1,6 +1,7 @@
 def project = "projet1"
 def outputPath = "C:\\Users\\hgrioui\\source\\repos\\res\\p1"
-
+def msbuild = tool name: 'MSBuild', type: 'hudson.plugins.msbuild.MsBuildInstallation'
+          bat "${msbuild} SimpleWindowsProject.sln"
 pipeline {
     agent any
     parameters {
@@ -19,7 +20,7 @@ pipeline {
         stage('Build & SonarQube analysis') {
             steps {
                 echo "Building ..."
-                bat "\"${tool 'msbuild'}\" ${project}.sln /p:OutputPath=${outputPath} /p:Platform=\"Any CPU\""
+                bat "${msbuild} ${project}.sln /p:OutputPath=${outputPath} /p:Platform=\"Any CPU\""
             }
         }
     }
