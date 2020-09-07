@@ -19,7 +19,7 @@ pipeline {
         stage('Build & SonarQube analysis') {
             steps {
                 echo "Building ..."
-                bat "\"${tool 'MsBuild 4.0 x64'}\" ${project}.sln /p:OutputPath=${outputPath} /p:Platform=\"Any CPU\""
+                bat "\"${tool 'msbuild'}\" ${project}.sln /p:OutputPath=${outputPath} /p:Platform=\"Any CPU\""
             }
         }
     }
