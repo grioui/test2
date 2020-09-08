@@ -1,4 +1,4 @@
-def project = "${env.WORKSPACE}\\gitTest_master\\projet1\\projet1.csproj"
+def project = "C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins.jenkins\\workspace\\gitTest_master\\projet1.csproj"
 def outputPath = "C:\\Users\\hgrioui\\source\\repos\\res\\p1"
 
 pipeline {
