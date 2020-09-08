@@ -23,6 +23,7 @@ pipeline {
         stage('Build & SonarQube analysis') {
             steps {
                 echo "Building ..."
+                sh "ls -l"
                 bat "\"${MSBUILD}\"  ${project} /p:OutputPath=${outputPath} /p:Configuration=${env.CONFIG};Platform=\"Any CPU\""
             }
         }
