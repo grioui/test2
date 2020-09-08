@@ -1,4 +1,4 @@
-def project = "projet1\\projet1.csproj"
+def project = "${env.WORKSPACE}\\gitTest_master\\projet1\\projet1.csproj"
 def outputPath = "C:\\Users\\hgrioui\\source\\repos\\res\\p1"
 
 pipeline {
@@ -23,7 +23,6 @@ pipeline {
         stage('Build & SonarQube analysis') {
             steps {
                 echo "Building ..."
-                sh "ls -l"
                 bat "\"${MSBUILD}\"  ${project} /p:OutputPath=${outputPath} /p:Configuration=${env.CONFIG};Platform=\"Any CPU\""
             }
         }
